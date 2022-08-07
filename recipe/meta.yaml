@@ -10,7 +10,6 @@ source:
   sha256: b0285338129efd5538e2d9a715ed435f979f6b1ae33aad068f34e7e83e6b4313
 
 build:
-  noarch: python
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --verbose"
 
@@ -18,10 +17,13 @@ requirements:
   host:
     - python
     - pip >=18.1
+    - setuptools
+    - wheel
     - six >=1.11.0
     - click >=6.0
     - requests >=2.18.4
   run:
+    - python
     - six
     - click
     - requests
